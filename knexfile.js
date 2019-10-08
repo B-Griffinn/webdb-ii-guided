@@ -1,5 +1,6 @@
 // Update with your config settings.
 
+
 module.exports = {
 
   development: {
@@ -28,8 +29,9 @@ module.exports = {
     }
   },
 
+  // defining the **required** configuration that knex needs to connect to production
   production: {
-    client: 'postgresql',
+    client: 'pg', // << changed this to 'pg' and ran 'npm i pg'
     connection: {
       database: 'my_db',
       user:     'username',
