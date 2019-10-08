@@ -1,13 +1,9 @@
 const express = require('express');
 const knex = require('knex');
 
-const db = knex({
-  client: 'sqlite3',
-  connection: {
-    filename: './data/produce.db3'
-  },
-  useNullAsDefault: true
-});
+const knexConfig = require('../knexfile.js'); // << added this code
+
+const db = knex(knexConfig.development); // <<edited this code
 
 const router = express.Router();
 
